@@ -1,10 +1,10 @@
 # LoanApprovalSystem – Sistem Java pentru evaluarea aprobării unui credit + testare unitară
 
 Echipă:
-Istrate Irina-Maria 334
-Stancu Rares 344
-Ticu Bogdan Valeriu 344
-Vacaru Marta-Patricia 342
+**Istrate Irina-Maria 334**
+**Stancu Rares 344**
+**Ticu Bogdan Valeriu 344**
+**Vacaru Marta-Patricia 342**
 
 
 **Temă:** T3 — Testare unitară în Java  
@@ -41,7 +41,7 @@ Proiectul este un mini-sistem de analiză a eligibilității pentru credit banca
 1. Implementarea logicii de business pentru aprobare/respingere credit.
 2. Demonstrarea tehnicilor de testare software pe un exemplu clar și ușor de urmărit.
 
-Aplicația nu dispune de interfață grafică, bază de date sau API — este proiectată exclusiv ca exercițiu de testare software, cu logică deterministă și reguli clare, verificabile prin teste unitare.
+
 
 ---
 
