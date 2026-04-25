@@ -1,6 +1,6 @@
 # LoanApprovalSystem – Sistem Java pentru evaluarea aprobării unui credit + testare unitară
 
-**Echipă:** [Numele membrilor echipei]  
+**Echipă:** 
 **Temă:** T3 — Testare unitară în Java  
 **Framework:** JUnit 5  
 **Tool mutation testing:** PIT (Pitest)  
