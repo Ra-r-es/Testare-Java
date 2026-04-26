@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>LoanApprovalSystem.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package loan;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class LoanApprovalSystem {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public LoanDecision evaluateLoan(Customer customer) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_9'/>
+9
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_9'>4</a>
+<span>
+
+1. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+2. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+3. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+4. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (customer.getAge() &#60; 18 || customer.getAge() &#62; 65) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_10'/>
+10
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_10'>1</a>
+<span>
+
+1. evaluateLoan : replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return rejected(&#34;Age out of range [18-65]&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_13'/>
+13
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_13'>2</a>
+<span>
+
+1. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+2. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (customer.getCreditScore() &#60; 600) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_14'/>
+14
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_14'>1</a>
+<span>
+
+1. evaluateLoan : replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return rejected(&#34;Credit score too low (min 600)&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_17'/>
+17
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_17'>2</a>
+<span>
+
+1. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+2. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (customer.getLatePaymentsCount() &#62; 3) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_18'/>
+18
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_18'>1</a>
+<span>
+
+1. evaluateLoan : replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return rejected(&#34;Too many late payments (max 3)&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_21'>1</a>
+<span>
+
+1. evaluateLoan : Replaced double division with multiplication &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double dti = customer.getMonthlyDebts() / customer.getNetSalary();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_22'/>
+22
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_22'>2</a>
+<span>
+
+1. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+2. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (dti &#62; 0.40) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_23'/>
+23
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_23'>1</a>
+<span>
+
+1. evaluateLoan : replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return rejected(&#34;Debt-to-income ratio exceeds 40%&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        double interestRate;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int score = customer.getCreditScore();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_29'/>
+29
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_29'>2</a>
+<span>
+
+1. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+2. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (score &#62;= 750) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            interestRate = 5.0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_31'/>
+31
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_31'>2</a>
+<span>
+
+1. evaluateLoan : negated conditional &rarr; KILLED<br/>
+
+2. evaluateLoan : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (score &#62;= 650) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            interestRate = 7.0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            interestRate = 10.0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_37'/>
+37
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_37'>3</a>
+<span>
+
+1. evaluateLoan : Replaced double subtraction with addition &rarr; KILLED<br/>
+
+2. evaluateLoan : Replaced double multiplication with division &rarr; KILLED<br/>
+
+3. evaluateLoan : Replaced double multiplication with division &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double maxLoanAmount = (customer.getNetSalary() * 0.4 - customer.getMonthlyDebts()) * 60;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_39'/>
+39
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_39'>1</a>
+<span>
+
+1. evaluateLoan : replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new LoanDecision(true, interestRate, maxLoanAmount, null);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private LoanDecision rejected(String reason) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_43'/>
+43
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_43'>1</a>
+<span>
+
+1. rejected : replaced return value with null for loan/LoanApprovalSystem::rejected &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new LoanDecision(false, 0.0, 0.0, reason);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@452e19ca_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_9'>9</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_9'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_10'>10</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_10'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:equivalencePartitioning()]</span></span> replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_13'>13</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_13'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_14'>14</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_14'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:equivalencePartitioning()]</span></span> replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_17'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:equivalencePartitioning()]</span></span> replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> Replaced double division with multiplication &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_23'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:equivalencePartitioning()]</span></span> replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:categoryPartitioning()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_31'>31</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_31'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:categoryPartitioning()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_37'>37</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_37'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:killMutants()]</span></span> Replaced double subtraction with addition &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:killMutants()]</span></span> Replaced double multiplication with division &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:killMutants()]</span></span> Replaced double multiplication with division &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_39'>39</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_39'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>evaluateLoan<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()]</span></span> replaced return value with null for loan/LoanApprovalSystem::evaluateLoan &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@452e19ca_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@452e19ca_43'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>rejected<br/><b>Killed by : </b>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:equivalencePartitioning()]</span></span> replaced return value with null for loan/LoanApprovalSystem::rejected &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+
+<li class='mutator'>EMPTY_RETURNS</li>
+
+<li class='mutator'>FALSE_RETURNS</li>
+
+<li class='mutator'>INCREMENTS</li>
+
+<li class='mutator'>INVERT_NEGS</li>
+
+<li class='mutator'>MATH</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+
+<li class='mutator'>NULL_RETURNS</li>
+
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+
+<li class='mutator'>TRUE_RETURNS</li>
+
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:testMain()] (1 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:statementCoverage()] (1 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:circuitsCoverage()] (1 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:conditionCoverage()] (1 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:branchCoverage()] (2 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:equivalencePartitioning()] (2 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:categoryPartitioning()] (3 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:boundaryValueAnalysis()] (3 ms)</li><li>loan.LoanApprovalSystemTest.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTest]/[method:killMutants()] (234 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:categoryPartitioning()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:circuitsCoverage()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:killMutants()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:branchCoverage()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:conditionCoverage()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:boundaryValueAnalysis()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:testMain()] (68 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:equivalencePartitioning()] (1 ms)</li><li>loan.LoanApprovalSystemTestAI.[engine:junit-jupiter]/[class:loan.LoanApprovalSystemTestAI]/[method:statementCoverage()] (1 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.20.0
+
+</body>
+</html>
