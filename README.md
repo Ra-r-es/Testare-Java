@@ -1,12 +1,6 @@
 # LoanApprovalSystem – Sistem Java pentru evaluarea aprobării unui credit + testare unitară
 
-Echipă:
-**Istrate Irina-Maria 334**
-**Stancu Rares 344**
-**Ticu Bogdan Valeriu 344**
-**Vacaru Marta-Patricia 342**
-
-
+**Echipă:** Istrate Irina-Maria (334), Stancu Rares (344), Ticu Bogdan Valeriu (344), Vacaru Marta-Patricia (342)  
 **Temă:** T3 — Testare unitară în Java  
 **Framework:** JUnit 5  
 **Tool mutation testing:** PIT (Pitest)  
@@ -41,7 +35,7 @@ Proiectul este un mini-sistem de analiză a eligibilității pentru credit banca
 1. Implementarea logicii de business pentru aprobare/respingere credit.
 2. Demonstrarea tehnicilor de testare software pe un exemplu clar și ușor de urmărit.
 
-
+Aplicația nu dispune de interfață grafică, bază de date sau API — este proiectată exclusiv ca exercițiu de testare software, cu logică deterministă și reguli clare, verificabile prin teste unitare.
 
 ---
 
@@ -195,15 +189,15 @@ Interpretare: 40% din salariul net poate susține rate/datorii; diferența dispo
 
 | Clasă | Condiție | Tip | Reprezentant |
 |-------|----------|-----|--------------|
-| C1 | 18 ≤ age ≤ 65 |  validă | age = 30 |
-| C2 | age < 18 |  invalidă | age = 10 |
-| C3 | age > 65 |  invalidă | age = 70 |
-| C4 | creditScore ≥ 600 |  validă | score = 700 |
-| C5 | creditScore < 600 |  invalidă | score = 500 |
-| C6 | latePayments ≤ 3 |  validă | payments = 0 |
-| C7 | latePayments > 3 |  invalidă | payments = 5 |
-| C8 | DTI ≤ 0.40 |  validă | debts=500, salary=5000 |
-| C9 | DTI > 0.40 |  invalidă | debts=3000, salary=5000 |
+| C1 | 18 ≤ age ≤ 65 | ✅ validă | age = 30 |
+| C2 | age < 18 | ❌ invalidă | age = 10 |
+| C3 | age > 65 | ❌ invalidă | age = 70 |
+| C4 | creditScore ≥ 600 | ✅ validă | score = 700 |
+| C5 | creditScore < 600 | ❌ invalidă | score = 500 |
+| C6 | latePayments ≤ 3 | ✅ validă | payments = 0 |
+| C7 | latePayments > 3 | ❌ invalidă | payments = 5 |
+| C8 | DTI ≤ 0.40 | ✅ validă | debts=500, salary=5000 |
+| C9 | DTI > 0.40 | ❌ invalidă | debts=3000, salary=5000 |
 
 ```java
 @Test
@@ -350,13 +344,13 @@ mvn test-compile org.pitest:pitest-maven:mutationCoverage
 
 | Strategie | Nr. teste | Rezultat |
 |-----------|-----------|----------|
-| Echivalence Partitioning | 6 |  Toate trec |
-| Boundary Value Analysis | 10 |  Toate trec |
-| Statement Coverage | 7 |  100% linii |
-| Branch Coverage | 7 |  Toate ramurile |
-| Condition Coverage | 5 |  Toate condițiile |
-| Path Coverage | 7 |  Toate circuitele |
-| Mutation Testing | 8+ |  Score > 85% |
+| Echivalence Partitioning | 6 | ✅ Toate trec |
+| Boundary Value Analysis | 10 | ✅ Toate trec |
+| Statement Coverage | 7 | ✅ 100% linii |
+| Branch Coverage | 7 | ✅ Toate ramurile |
+| Condition Coverage | 5 | ✅ Toate condițiile |
+| Path Coverage | 7 | ✅ Toate circuitele |
+| Mutation Testing | 8+ | ✅ Score > 85% |
 
 > 📸 *[Inserați captură de ecran cu raportul PIT complet]*
 
@@ -384,13 +378,13 @@ mvn test-compile org.pitest:pitest-maven:mutationCoverage
 **Tool utilizat:** Google Gemini 2.0 Flash, https://gemini.google.com, Data generării: 25 aprilie 2026
 
 | Strategie | Suita noastră | Gemini | Verdict |
-|-----------|--------------|--------|---------
-| Echivalence Partitioning | 6 clase complete | 3 clase | A noastră  |
-| BVA | n-1, n, n+1 complet | Doar n-1, n | A noastră  |
-| Statement Coverage | 100% | ~80% | A noastră  |
+|-----------|--------------|--------|---------|
+| Echivalence Partitioning | 6 clase complete | 3 clase | A noastră ✅ |
+| BVA | n-1, n, n+1 complet | Doar n-1, n | A noastră ✅ |
+| Statement Coverage | 100% | ~80% | A noastră ✅ |
 | Condition Coverage | Sub-condiții independente | Condiții compuse | Egalitate |
-| Path Coverage | Toate 7 circuite | Doar 3 | A noastră  |
-| Branch Coverage | Toate ramurile | Rejection doar | A noastră  |
+| Path Coverage | Toate 7 circuite | Doar 3 | A noastră ✅ |
+| Branch Coverage | Toate ramurile | Rejection doar | A noastră ✅ |
 | Mutation Testing | Frontieră + calcule | Frontieră doar | A noastră ✅ |
 
 **Concluzie:** AI-ul generează teste funcționale dar incomplete metodologic. Util ca punct de start, nu înlocuiește expertiza umană în aplicarea tehnicilor de testare. Raport complet: `Raport_AI_Complet.docx`.
@@ -418,3 +412,82 @@ mvn test-compile org.pitest:pitest-maven:mutationCoverage
 [9] Jia, Yue; Harman, Mark, *An Analysis and Survey of the Development of Mutation Testing*, IEEE Transactions on Software Engineering, vol. 37, nr. 5, 2011, pp. 649-678
 
 [10] Offutt, Jeff; Untch, Roland H., *Mutation 2000: Uniting the Orthogonal*, Mutation Testing for the New Century, Springer, 2001
+
+---
+
+## 15. Rezultate PIT (Mutation Testing)
+
+PIT a fost rulat pe proiect și a generat raportul în `target/pit-reports/index.html`.
+
+| Metric | Valoare | Interpretare |
+|--------|---------|--------------|
+| Clase testate | 6 | Customer, LoanDecision, LoanApprovalSystem, Main, LoanApprovalSystemTest, LoanApprovalSystemTestAI |
+| Line Coverage | 99% (224/225) | Aproape toate liniile sunt executate |
+| Mutation Coverage | 25% (34/138) | 34 din 138 mutanți au fost detectați |
+| Test Strength | 25% (34/138) | Confirmat — testele detectează 1 din 4 mutații |
+
+### Interpretare
+
+**Line Coverage 99%** — testele execută aproape tot codul. Excelent din perspectivă structurală.
+
+**Mutation Coverage 25%** — diferența față de line coverage explică principiul mutation testing: execuția codului nu este suficientă, testele trebuie să verifice și corectitudinea rezultatelor.
+
+Analiza `mutations.xml` arată că:
+- Mutanții **KILLED** provin din logica de decizie (operatori de comparație, praguri, valori dobândă)
+- Mutanții **SURVIVED** sunt pe metode auxiliare: `toString()`, `System.out.println`, getter-uri triviale
+
+### Mutanți KILLED vs SURVIVED
+
+| Tip mutație | Status | Test care ucide |
+|-------------|--------|----------------|
+| `age < 18` → `age <= 18` | KILLED | `boundaryValueAnalysis`: age=18 |
+| `creditScore < 600` → `>= 600` | KILLED | `equivalencePartitioning`: score=500 |
+| `interestRate = 5.0` → `0.0` | KILLED | `killMutants`: assertEquals(5.0, ...) |
+| `* 60` → `* 0` în formulă | KILLED | `killMutants`: assertEquals(suma, ...) |
+| `System.out.println` eliminat | SURVIVED | Nu există test pe output consolă |
+| `toString()` modificată | SURVIVED | Nu există test assertEquals pe toString |
+| getter trivial returnat 0 | SURVIVED | Nu există test direct pe getter |
+
+### Recomandări pentru îmbunătățirea mutation score
+
+- Adăugare teste pentru `toString()` din `Customer` și `LoanDecision`
+- Verificare explicită a fiecărui getter prin `assertEquals`
+- Teste pentru output-ul din `Main` folosind `system-lambda`
+
+---
+
+## 16. Diagrame
+
+### Control Flow Graph (CFG) — evaluateLoan()
+
+Fișier: `CFG_evaluateLoan.svg`
+
+Graful de control vizualizează toate drumurile posibile prin metoda `evaluateLoan()`.
+Complexitate ciclomatică: **V(G) = 7** (4 drumuri de respingere + 3 drumuri de aprobare).
+
+- **P1**: age invalid → REJECTED
+- **P2**: creditScore invalid → REJECTED
+- **P3**: latePaymentsCount invalid → REJECTED
+- **P4**: DTI > 0.40 → REJECTED
+- **P5**: toate valide, score ≥ 750 → APPROVED, dobândă 5%
+- **P6**: toate valide, 650 ≤ score < 750 → APPROVED, dobândă 7%
+- **P7**: toate valide, 600 ≤ score < 650 → APPROVED, dobândă 10%
+
+### Diagrama UML a claselor
+
+Fișier: `UML_ClassDiagram.svg`
+
+Diagrama prezintă structura OOP a proiectului: clasele, atributele, metodele și relațiile de dependență (`«uses»`, `«creates»`, `«tests»`).
+
+---
+
+## 17. Materiale adăugate recent
+
+| Fișier | Descriere |
+|--------|-----------|
+| `CFG_evaluateLoan.svg` | Control Flow Graph pentru evaluateLoan() |
+| `UML_ClassDiagram.svg` | Diagrama UML a claselor |
+| `Documentatie_TSS.docx` | Document tehnic complet pentru predare |
+| `Raport_AI_Complet.docx` | Comparație suită proprie vs Gemini 2.0 Flash |
+| `pit-reports/index.html` | Raport HTML PIT — Line Coverage 99%, Mutation Coverage 25% |
+| `pit-reports/mutations.xml` | Lista completă a mutanților (KILLED/SURVIVED) |

@@ -1,0 +1,110 @@
+<svg width="680" viewBox="0 0 680 860" xmlns="http://www.w3.org/2000/svg">
+<title>CFG — evaluateLoan()</title>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 13px; fill: #1a1a1a; }
+    .bold { font-weight: 700; }
+    .small { font-size: 11px; fill: #444; }
+    .edge { stroke: #1a1a1a; stroke-width: 1; fill: none; }
+    .dash { stroke: #888; stroke-width: 0.8; fill: none; stroke-dasharray: 4 3; }
+  </style>
+</defs>
+
+<!-- ── START ── -->
+<ellipse cx="340" cy="28" rx="50" ry="18" fill="#1a1a1a"/>
+<text x="340" y="32" text-anchor="middle" font-size="12" fill="white" class="bold">START</text>
+
+<line class="edge" x1="340" y1="46" x2="340" y2="76" marker-end="url(#a)"/>
+
+<!-- ── Nod 1: vârstă ── -->
+<polygon points="340,76 460,114 340,152 220,114" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="109" text-anchor="middle" class="bold">Verificare vârstă</text>
+<text x="340" y="127" text-anchor="middle" class="small">age &lt; 18 || age &gt; 65</text>
+
+<!-- FALSE jos -->
+<line class="edge" x1="340" y1="152" x2="340" y2="222" marker-end="url(#a)"/>
+<text x="350" y="192" class="small">FALSE</text>
+<!-- TRUE stânga -->
+<line class="edge" x1="220" y1="114" x2="60" y2="114" marker-end="url(#a)"/>
+<text x="135" y="107" text-anchor="middle" class="small">TRUE</text>
+<rect x="20" y="96" width="40" height="36" rx="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+<text x="40" y="119" text-anchor="middle" class="small">R1</text>
+
+<!-- ── Nod 2: credit ── -->
+<polygon points="340,222 460,260 340,298 220,260" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="255" text-anchor="middle" class="bold">Verificare credit</text>
+<text x="340" y="273" text-anchor="middle" class="small">creditScore &lt; 600</text>
+
+<line class="edge" x1="340" y1="298" x2="340" y2="368" marker-end="url(#a)"/>
+<text x="350" y="338" class="small">FALSE</text>
+<line class="edge" x1="220" y1="260" x2="60" y2="260" marker-end="url(#a)"/>
+<text x="135" y="253" text-anchor="middle" class="small">TRUE</text>
+<rect x="20" y="242" width="40" height="36" rx="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+<text x="40" y="265" text-anchor="middle" class="small">R2</text>
+
+<!-- ── Nod 3: întârzieri ── -->
+<polygon points="340,368 460,406 340,444 220,406" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="401" text-anchor="middle" class="bold">Verificare întârzieri</text>
+<text x="340" y="419" text-anchor="middle" class="small">latePaymentsCount &gt; 3</text>
+
+<line class="edge" x1="340" y1="444" x2="340" y2="514" marker-end="url(#a)"/>
+<text x="350" y="484" class="small">FALSE</text>
+<line class="edge" x1="220" y1="406" x2="60" y2="406" marker-end="url(#a)"/>
+<text x="135" y="399" text-anchor="middle" class="small">TRUE</text>
+<rect x="20" y="388" width="40" height="36" rx="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+<text x="40" y="411" text-anchor="middle" class="small">R3</text>
+
+<!-- ── Nod 4: DTI ── -->
+<polygon points="340,514 460,552 340,590 220,552" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="547" text-anchor="middle" class="bold">Verificare DTI</text>
+<text x="340" y="565" text-anchor="middle" class="small">debts / salary &gt; 0.40</text>
+
+<line class="edge" x1="340" y1="590" x2="340" y2="640" marker-end="url(#a)"/>
+<text x="350" y="620" class="small">FALSE</text>
+<line class="edge" x1="220" y1="552" x2="60" y2="552" marker-end="url(#a)"/>
+<text x="135" y="545" text-anchor="middle" class="small">TRUE</text>
+<rect x="20" y="534" width="40" height="36" rx="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+<text x="40" y="557" text-anchor="middle" class="small">R4</text>
+
+<!-- R1–R4 duse la REJECTED -->
+<line class="dash" x1="20" y1="114" x2="8" y2="114"/>
+<line class="dash" x1="8" y1="114" x2="8" y2="652"/>
+<line class="edge" x1="8" y1="652" x2="108" y2="652" marker-end="url(#a)"/>
+<rect x="108" y="634" width="96" height="36" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="156" y="657" text-anchor="middle" class="bold">REJECTED</text>
+
+<!-- ── Calcul dobândă ── -->
+<rect x="210" y="640" width="260" height="44" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="657" text-anchor="middle" class="bold">Calcul dobândă</text>
+<text x="340" y="675" text-anchor="middle" class="small">P5: ≥750→5%  P6: ≥650→7%  P7: altfel→10%</text>
+
+<line class="edge" x1="340" y1="684" x2="340" y2="714" marker-end="url(#a)"/>
+
+<!-- ── Calcul sumă ── -->
+<rect x="210" y="714" width="260" height="44" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="731" text-anchor="middle" class="bold">Calcul sumă maximă</text>
+<text x="340" y="749" text-anchor="middle" class="small">(salary × 0.4 − debts) × 60</text>
+
+<line class="edge" x1="340" y1="758" x2="340" y2="788" marker-end="url(#a)"/>
+
+<!-- ── APPROVED ── -->
+<rect x="240" y="788" width="200" height="36" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="811" text-anchor="middle" class="bold">APPROVED</text>
+
+<!-- APPROVED + REJECTED → END -->
+<line class="edge" x1="340" y1="824" x2="340" y2="844" marker-end="url(#a)"/>
+<line class="dash" x1="156" y1="670" x2="156" y2="844"/>
+<line class="edge" x1="156" y1="844" x2="290" y2="844" marker-end="url(#a)"/>
+
+<!-- ── END ── -->
+<ellipse cx="340" cy="844" rx="50" ry="16" fill="#1a1a1a"/>
+<text x="340" y="848" text-anchor="middle" font-size="12" fill="white" class="bold">END</text>
+
+<!-- V(G) label -->
+<text x="520" y="720" class="small" text-anchor="start">V(G) = 7</text>
+<text x="520" y="736" class="small" text-anchor="start">P1–P4: REJECTED</text>
+<text x="520" y="752" class="small" text-anchor="start">P5–P7: APPROVED</text>
+</svg>

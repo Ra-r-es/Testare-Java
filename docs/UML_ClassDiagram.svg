@@ -1,0 +1,114 @@
+<svg width="680" viewBox="0 0 680 580" xmlns="http://www.w3.org/2000/svg">
+<title>Diagrama UML — LoanApprovalSystem</title>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 12px; fill: #1a1a1a; }
+    .bold { font-weight: 700; font-size: 13px; }
+    .stereo { font-size: 10px; fill: #555; font-style: italic; }
+    .mono { font-family: 'Courier New', monospace; font-size: 11px; }
+    .dep { stroke: #1a1a1a; stroke-width: 0.9; fill: none; stroke-dasharray: 6 3; }
+    .box { fill: white; stroke: #1a1a1a; stroke-width: 1.2; }
+    .hdr { fill: #e8e8e8; stroke: #1a1a1a; stroke-width: 1.2; }
+    .div { stroke: #1a1a1a; stroke-width: 0.6; }
+  </style>
+</defs>
+
+<!-- ── Customer (stânga sus) ────────────────── -->
+<text x="145" y="16" text-anchor="middle" class="stereo">«immutable»</text>
+<rect class="hdr" x="30" y="22" width="230" height="26" rx="0"/>
+<rect x="29" y="21" width="232" height="26" rx="6" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="145" y="38" text-anchor="middle" class="bold">Customer</text>
+<line class="div" x1="30" y1="48" x2="260" y2="48"/>
+<rect class="box" x="30" y="48" width="230" height="90" rx="0"/>
+<text x="44" y="66" class="mono">- age : int</text>
+<text x="44" y="81" class="mono">- creditScore : int</text>
+<text x="44" y="96" class="mono">- latePaymentsCount : int</text>
+<text x="44" y="111" class="mono">- netSalary : double</text>
+<text x="44" y="126" class="mono">- monthlyDebts : double</text>
+<line class="div" x1="30" y1="138" x2="260" y2="138"/>
+<rect class="box" x="30" y="138" width="230" height="90" rx="0"/>
+<text x="44" y="156" class="mono">+ Customer(age, score, ...)</text>
+<text x="44" y="171" class="mono">+ getAge() : int</text>
+<text x="44" y="186" class="mono">+ getCreditScore() : int</text>
+<text x="44" y="201" class="mono">+ getNetSalary() : double</text>
+<text x="44" y="216" class="mono">+ toString() : String</text>
+<rect x="29" y="21" width="232" height="208" rx="6" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+<!-- ── LoanDecision (dreapta sus) ────────────── -->
+<text x="535" y="16" text-anchor="middle" class="stereo">«immutable»</text>
+<rect x="419" y="21" width="232" height="26" rx="6" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="535" y="38" text-anchor="middle" class="bold">LoanDecision</text>
+<line class="div" x1="420" y1="48" x2="650" y2="48"/>
+<rect class="box" x="420" y="48" width="230" height="72" rx="0"/>
+<text x="434" y="66" class="mono">- approved : boolean</text>
+<text x="434" y="81" class="mono">- interestRate : double</text>
+<text x="434" y="96" class="mono">- maxLoanAmount : double</text>
+<text x="434" y="111" class="mono">- rejectionReason : String</text>
+<line class="div" x1="420" y1="120" x2="650" y2="120"/>
+<rect class="box" x="420" y="120" width="230" height="108" rx="0"/>
+<text x="434" y="138" class="mono">+ LoanDecision(approved, ...)</text>
+<text x="434" y="153" class="mono">+ isApproved() : boolean</text>
+<text x="434" y="168" class="mono">+ getInterestRate() : double</text>
+<text x="434" y="183" class="mono">+ getMaxLoanAmount() : double</text>
+<text x="434" y="198" class="mono">+ getRejectionReason() : String</text>
+<text x="434" y="213" class="mono">+ toString() : String</text>
+<rect x="419" y="21" width="232" height="208" rx="6" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+<!-- ── LoanApprovalSystem (centru) ───────────── -->
+<text x="340" y="270" text-anchor="middle" class="stereo">«service»</text>
+<rect x="209" y="276" width="262" height="26" rx="6" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="340" y="293" text-anchor="middle" class="bold">LoanApprovalSystem</text>
+<line class="div" x1="210" y1="302" x2="470" y2="302"/>
+<rect class="box" x="210" y="302" width="260" height="18" rx="0"/>
+<text x="224" y="315" class="mono">(no fields)</text>
+<line class="div" x1="210" y1="320" x2="470" y2="320"/>
+<rect class="box" x="210" y="320" width="260" height="34" rx="0"/>
+<text x="224" y="338" class="mono">+ evaluateLoan(c: Customer)</text>
+<text x="224" y="353" class="mono">      : LoanDecision</text>
+<rect x="209" y="276" width="262" height="78" rx="6" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+<!-- ── Main (stânga jos) ─────────────────────── -->
+<text x="90" y="414" text-anchor="middle" class="stereo">«demo»</text>
+<rect x="19" y="420" width="142" height="26" rx="6" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="90" y="437" text-anchor="middle" class="bold">Main</text>
+<line class="div" x1="20" y1="446" x2="160" y2="446"/>
+<rect class="box" x="20" y="446" width="140" height="18" rx="0"/>
+<text x="34" y="459" class="mono">(no fields)</text>
+<line class="div" x1="20" y1="464" x2="160" y2="464"/>
+<rect class="box" x="20" y="464" width="140" height="20" rx="0"/>
+<text x="34" y="478" class="mono">+ main(args) : void</text>
+<rect x="19" y="420" width="142" height="64" rx="6" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+<!-- ── LoanApprovalSystemTest (dreapta jos) ──── -->
+<text x="560" y="414" text-anchor="middle" class="stereo">«JUnit 5»</text>
+<rect x="449" y="420" width="222" height="26" rx="6" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="560" y="437" text-anchor="middle" class="bold">LoanApprovalSystemTest</text>
+<line class="div" x1="450" y1="446" x2="670" y2="446"/>
+<rect class="box" x="450" y="446" width="220" height="18" rx="0"/>
+<text x="464" y="459" class="mono">- system: LoanApprovalSystem</text>
+<line class="div" x1="450" y1="464" x2="670" y2="464"/>
+<rect class="box" x="450" y="464" width="220" height="34" rx="0"/>
+<text x="464" y="479" class="mono">+ equivalencePartitioning()</text>
+<text x="464" y="495" class="mono">+ boundaryValueAnalysis() ...</text>
+<rect x="449" y="420" width="222" height="78" rx="6" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+<!-- ── Relații ─────────────────────────────── -->
+<!-- LAS uses Customer -->
+<line class="dep" x1="210" y1="308" x2="170" y2="230" marker-end="url(#a)"/>
+<text x="162" y="272" text-anchor="end" style="font-size:10px;fill:#555;">«uses»</text>
+
+<!-- LAS creates LoanDecision -->
+<line class="dep" x1="470" y1="308" x2="512" y2="230" marker-end="url(#a)"/>
+<text x="516" y="272" style="font-size:10px;fill:#555;">«creates»</text>
+
+<!-- Main uses LAS -->
+<line class="dep" x1="160" y1="452" x2="210" y2="354" marker-end="url(#a)"/>
+<text x="162" y="408" text-anchor="end" style="font-size:10px;fill:#555;">«uses»</text>
+
+<!-- Test tests LAS -->
+<line class="dep" x1="450" y1="452" x2="470" y2="354" marker-end="url(#a)"/>
+<text x="472" y="408" style="font-size:10px;fill:#555;">«tests»</text>
+</svg>
