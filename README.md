@@ -391,6 +391,34 @@ mvn test-compile org.pitest:pitest-maven:mutationCoverage
 
 ---
 
+## Test analysis (summary)
+
+Detalii extinse sunt în `TEST_EXPLANATIONS.md`. Rezumatul important:
+
+- Obiectiv: verificarea condițiilor de respingere (age, creditScore, latePayments, DTI) și corectitudinea calculelor (`interestRate`, `maxLoanAmount`).
+- Funcția centrală: `evaluateLoan(Customer)` — logică secvențială (first-failure-wins). CFG și snippet sunt în `TEST_EXPLANATIONS.md`.
+- Mulțimea minimă de teste recomandată (7) acoperă toate ramurile principale:
+    - `Customer(17,700,1,5000,1000)` — age < 18
+    - `Customer(66,700,1,5000,1000)` — age > 65
+    - `Customer(30,599,1,5000,1000)` — score < 600
+    - `Customer(30,700,4,5000,1000)` — latePayments > 3
+    - `Customer(30,700,1,5000,3000)` — DTI > 0.40
+    - `Customer(30,750,1,5000,1000)` — approved, tier 5%
+    - `Customer(30,620,1,5000,1000)` — approved, tier 10%
+
+- Mutation testing (PIT) — comenzi recomandate (necesită `pom.xml`):
+
+```bash
+mvn test
+mvn org.pitest:pitest-maven:mutationCoverage
+```
+
+- Terminologie: `circuitsCoverage()` din proiect execută mai multe paths (nu circuite). Recomandare: redenumiți în `pathsCoverage()` pentru corectitudine terminologică, sau introduceți cod cu loop-uri dacă cursul cere circuite reale.
+
+- Notă: NU se vor face modificări de cod fără acord — doar README/docs/presentation pot fi actualizate.
+
+---
+
 ## 14. Referințe bibliografice
 
 [1] Aniche, Maurício, *Effective Software Testing: A developer's guide*, Simon and Schuster, 2022
@@ -460,18 +488,80 @@ Analiza `mutations.xml` arată că:
 
 ### Control Flow Graph (CFG) — evaluateLoan()
 
-Fișier: `CFG_evaluateLoan.svg`
+Complexitate ciclomatică: **V(G) = 7** (4 căi de respingere + 3 căi de aprobare).
 
-Graful de control vizualizează toate drumurile posibile prin metoda `evaluateLoan()`.
-Complexitate ciclomatică: **V(G) = 7** (4 drumuri de respingere + 3 drumuri de aprobare).
+```java
+ 1  public LoanDecision evaluateLoan(Customer customer) {
+ 2
+ 3      if (customer.getAge() < 18 || customer.getAge() > 65) {
+ 4          return rejected("Age out of range [18-65]");
+ 5      }
+ 6
+ 7      if (customer.getCreditScore() < 600) {
+ 8          return rejected("Credit score too low (min 600)");
+ 9      }
+10
+11      if (customer.getLatePaymentsCount() > 3) {
+12          return rejected("Too many late payments (max 3)");
+13      }
+14
+15      double dti = customer.getMonthlyDebts() / customer.getNetSalary();
+16      if (dti > 0.40) {
+17          return rejected("Debt-to-income ratio exceeds 40%");
+18      }
+19
+20      double interestRate;
+21      int score = customer.getCreditScore();
+22      if (score >= 750) {
+23          interestRate = 5.0;
+24      } else if (score >= 650) {
+25          interestRate = 7.0;
+26      } else {
+27          interestRate = 10.0;
+28      }
+29
+30      double maxLoanAmount = (customer.getNetSalary() * 0.4
+31                              - customer.getMonthlyDebts()) * 60;
+32      return new LoanDecision(true, interestRate, maxLoanAmount, null);
+33  }
+```
 
-- **P1**: age invalid → REJECTED
-- **P2**: creditScore invalid → REJECTED
-- **P3**: latePaymentsCount invalid → REJECTED
-- **P4**: DTI > 0.40 → REJECTED
-- **P5**: toate valide, score ≥ 750 → APPROVED, dobândă 5%
-- **P6**: toate valide, 650 ≤ score < 750 → APPROVED, dobândă 7%
-- **P7**: toate valide, 600 ≤ score < 650 → APPROVED, dobândă 10%
+```mermaid
+flowchart TD
+    N1([1: Start]) --> N2{2: age < 18 OR age > 65?}
+    N2 -- Da --> N3[3: rejected - Age out of range]
+    N2 -- Nu --> N4{4: creditScore < 600?}
+    N4 -- Da --> N5[5: rejected - Credit score too low]
+    N4 -- Nu --> N6{6: latePayments > 3?}
+    N6 -- Da --> N7[7: rejected - Too many late payments]
+    N6 -- Nu --> N8{8: dti > 0.40?}
+    N8 -- Da --> N9[9: rejected - DTI exceeds 40%]
+    N8 -- Nu --> N10{10: score >= 750?}
+    N10 -- Da --> N11[11: interestRate = 5.0]
+    N10 -- Nu --> N12{12: score >= 650?}
+    N12 -- Da --> N13[13: interestRate = 7.0]
+    N12 -- Nu --> N14[14: interestRate = 10.0]
+    N11 --> N15
+    N13 --> N15
+    N14 --> N15
+    N15[15: compute maxLoanAmount] --> N16([16: Stop])
+    N3 --> N16
+    N5 --> N16
+    N7 --> N16
+    N9 --> N16
+```
+
+Căile independente (paths):
+
+| Cale | Descriere |
+|------|-----------|
+| **P1** | N1→N2→N3→N16 — age invalid → REJECTED |
+| **P2** | N1→N2→N4→N5→N16 — creditScore invalid → REJECTED |
+| **P3** | N1→N2→N4→N6→N7→N16 — latePayments invalid → REJECTED |
+| **P4** | N1→N2→N4→N6→N8→N9→N16 — DTI > 0.40 → REJECTED |
+| **P5** | N1→…→N10→N11→N15→N16 — score ≥ 750, dobândă 5% |
+| **P6** | N1→…→N12→N13→N15→N16 — 650 ≤ score < 750, dobândă 7% |
+| **P7** | N1→…→N12→N14→N15→N16 — 600 ≤ score < 650, dobândă 10% |
 
 ### Diagrama UML a claselor
 
